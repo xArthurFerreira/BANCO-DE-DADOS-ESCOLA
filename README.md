@@ -241,24 +241,43 @@ VALUES
 INSERT INTO Disciplina (ID, Nome, CargaHoraria, Sala)
 VALUES
     (1, 'Matemática', 60, 'Sala 101'),
+    
     (2, 'História', 45, 'Sala 202'),
+    
     (3, 'Física', 50, 'Sala 303'),
+    
     (4, 'Química', 55, 'Sala 404'),
+    
     (5, 'Biologia', 40, 'Sala 505'),
+    
     (6, 'Geografia', 60, 'Sala 606'),
+    
     (7, 'Artes', 30, 'Sala 707'),
+    
     (8, 'Educação Física', 40, 'Sala 808'),
+    
     (9, 'Inglês', 45, 'Sala 909'),
+    
     (10, 'História da Arte', 35, 'Sala 1010'),
+
     (11, 'Espanhol', 40, 'Sala 1111'),
+    
     (12, 'Matemática Financeira', 50, 'Sala 1212'),
+    
     (13, 'Filosofia', 30, 'Sala 1313'),
+    
     (14, 'Sociologia', 30, 'Sala 1414'),
+    
     (15, 'Literatura', 40, 'Sala 1515'),
+    
     (16, 'Química Orgânica', 55, 'Sala 1616'),
+    
     (17, 'Economia', 45, 'Sala 1717'),
+    
     (18, 'Psicologia', 35, 'Sala 1818'),
+    
     (19, 'Marketing', 40, 'Sala 1919'),
+    
     (20, 'Comunicação Social', 50, 'Sala 2020');
 
 ![image](https://github.com/xArthurFerreira/BANCO-DE-DADOS-ESCOLA/assets/141787340/c655c9a8-cb43-49e6-9910-7f86bf0228ce)
@@ -271,24 +290,43 @@ VALUES
 INSERT INTO Turma (ID, AnoLetivo, Periodo, IDDisciplina, IDProfessor)
 VALUES
     (1, 2022, 'Semestre 1', 1, 1),
+    
     (2, 2022, 'Semestre 1', 2, 2),
+    
     (3, 2022, 'Semestre 1', 3, 3),
+    
     (4, 2022, 'Semestre 2', 4, 4),
+    
     (5, 2022, 'Semestre 2', 5, 5),
+    
     (6, 2022, 'Semestre 1', 6, 6),
+    
     (7, 2022, 'Semestre 2', 7, 7),
+    
     (8, 2022, 'Semestre 1', 8, 8),
+
     (9, 2022, 'Semestre 2', 9, 9),
+    
     (10, 2022, 'Semestre 1', 10, 10),
+    
     (11, 2022, 'Semestre 2', 11, 11),
+    
     (12, 2022, 'Semestre 2', 12, 12),
+    
     (13, 2022, 'Semestre 1', 13, 13),
+    
     (14, 2022, 'Semestre 2', 14, 14),
+    
     (15, 2022, 'Semestre 1', 15, 15),
+    
     (16, 2022, 'Semestre 1', 16, 16),
+    
     (17, 2022, 'Semestre 2', 17, 17),
+    
     (18, 2022, 'Semestre 1', 18, 18),
+    
     (19, 2022, 'Semestre 2', 19, 19),
+    
     (20, 2022, 'Semestre 1', 20, 20);
 
 ![image](https://github.com/xArthurFerreira/BANCO-DE-DADOS-ESCOLA/assets/141787340/0663c9d7-fe6d-4d01-9761-6f6ad5719be4)
@@ -303,24 +341,43 @@ VALUES
 INSERT INTO Nota (ID, IDAluno, IDDisciplina, Valor, DataLancamento)
 VALUES
     (1, 1, 1, 8.5, '2022-06-01'),
+    
     (2, 2, 1, 7.0, '2022-06-01'),
+    
     (3, 3, 3, 9.0, '2022-06-02'),
+    
     (4, 4, 4, 6.5, '2022-06-02'),
+    
     (5, 5, 5, 8.0, '2022-06-03'),
+    
     (6, 6, 6, 7.2, '2022-06-03'),
+    
     (7, 7, 7, 9.5, '2022-06-04'),
+    
     (8, 8, 8, 6.8, '2022-06-04'),
+    
     (9, 9, 9, 8.3, '2022-06-05'),
+    
     (10, 10, 10, 7.7, '2022-06-05'),
+    
     (11, 11, 11, 8.9, '2022-06-06'),
+    
     (12, 12, 12, 6.0, '2022-06-06'),
+    
     (13, 13, 13, 7.5, '2022-06-07'),
+    
     (14, 14, 14, 9.2, '2022-06-07'),
+    
     (15, 15, 15, 6.3, '2022-06-08'),
+    
     (16, 16, 16, 8.1, '2022-06-08'),
+    
     (17, 17, 17, 7.0, '2022-06-09'),
+    
     (18, 18, 18, 8.7, '2022-06-09'),
+    
     (19, 19, 19, 6.9, '2022-06-10'),
+    
     (20, 20, 20, 7.8, '2022-06-10');
 
 ![image](https://github.com/xArthurFerreira/BANCO-DE-DADOS-ESCOLA/assets/141787340/72cad37b-0f3b-4441-bd45-018c106dd4f9)
@@ -359,6 +416,114 @@ DELETE FROM Professor WHERE ID = 21;
 
 ![image](https://github.com/xArthurFerreira/BANCO-DE-DADOS-ESCOLA/assets/141787340/afd7d051-dda3-457e-9b00-5ed92968e311)
 
+
+
+
+
+# Relatórios
+
+
+1. Listar todos os alunos e suas notas em uma disciplina específica:
+
+SELECT Aluno.Nome, Nota.Valor
+FROM Aluno
+JOIN Nota ON Aluno.ID = Nota.IDAluno
+WHERE Nota.IDDisciplina = 1
+ORDER BY Aluno.Nome;
+
+![image](https://github.com/xArthurFerreira/BANCO-DE-DADOS-ESCOLA/assets/141787340/f28afc87-295d-4130-9602-1c5eec8b6357)
+
+
+
+2. Mostrar informações sobre uma turma específica, incluindo detalhes do professor e disciplina:
+
+SELECT Turma.ID, Turma.AnoLetivo, Turma.Periodo, Professor.Nome AS Professor, Disciplina.Nome AS Disciplina
+FROM Turma
+JOIN Professor ON Turma.IDProfessor = Professor.ID
+JOIN Disciplina ON Turma.IDDisciplina = Disciplina.ID
+WHERE Turma.ID = 1;
+
+![image](https://github.com/xArthurFerreira/BANCO-DE-DADOS-ESCOLA/assets/141787340/a52ecf13-eb86-4b61-8625-1fb080f2d2a3)
+
+
+3. Listar todas as disciplinas ordenadas pela carga horária:
+
+SELECT Nome, CargaHoraria
+FROM Disciplina
+ORDER BY CargaHoraria DESC;
+
+![image](https://github.com/xArthurFerreira/BANCO-DE-DADOS-ESCOLA/assets/141787340/5634dc26-53aa-4b90-99be-f5dfb37ba14c)
+
+
+4. Exibir os alunos que foram aprovados em todas as disciplinas:
+
+SELECT Aluno.Nome
+FROM Aluno
+WHERE Aluno.ID NOT IN (
+    SELECT IDAluno
+    FROM Nota
+    WHERE Valor < 5.0
+);
+
+![image](https://github.com/xArthurFerreira/BANCO-DE-DADOS-ESCOLA/assets/141787340/16791b4c-3e30-4ac5-bbb0-cc292ca8033e)
+
+
+5. Mostrar as disciplinas lecionadas por um professor específico:
+
+SELECT Disciplina.Nome
+FROM Disciplina
+JOIN Turma ON Disciplina.ID = Turma.IDDisciplina
+WHERE Turma.IDProfessor = 1
+ORDER BY Disciplina.Nome;
+
+![image](https://github.com/xArthurFerreira/BANCO-DE-DADOS-ESCOLA/assets/141787340/e438f682-bd23-4b9a-b0d7-e34e294f3d0f)
+
+
+
+6. Listar todos os alunos ordenados por nome que possuem notas lançadas:
+
+SELECT Aluno.Nome
+FROM Aluno
+JOIN Nota ON Aluno.ID = Nota.IDAluno
+ORDER BY Aluno.Nome;
+
+
+![image](https://github.com/xArthurFerreira/BANCO-DE-DADOS-ESCOLA/assets/141787340/5270d9b7-f3b4-402b-b8be-815362858933)
+
+
+
+8. Mostrar a média de notas de cada aluno:
+
+SELECT Aluno.Nome, AVG(Nota.Valor) AS Media
+FROM Aluno
+JOIN Nota ON Aluno.ID = Nota.IDAluno
+GROUP BY Aluno.Nome
+ORDER BY Media DESC;
+
+![image](https://github.com/xArthurFerreira/BANCO-DE-DADOS-ESCOLA/assets/141787340/eed6fc06-e45b-4963-b9e2-671e563dd1fa)
+
+
+9. Listar os professores que lecionam disciplinas com carga horária acima de 50 horas:
+
+SELECT DISTINCT Professor.Nome
+FROM Professor
+JOIN Turma ON Professor.ID = Turma.IDProfessor
+JOIN Disciplina ON Turma.IDDisciplina = Disciplina.ID
+WHERE Disciplina.CargaHoraria > 50;
+
+
+![image](https://github.com/xArthurFerreira/BANCO-DE-DADOS-ESCOLA/assets/141787340/04eb5c0c-db2f-4701-96b7-13ea081c1348)
+
+
+10. Exibir todas as notas ordenadas por valor:
+
+SELECT Aluno.Nome, Disciplina.Nome AS Disciplina, Nota.Valor
+FROM Nota
+JOIN Aluno ON Nota.IDAluno = Aluno.ID
+JOIN Disciplina ON Nota.IDDisciplina = Disciplina.ID
+ORDER BY Nota.Valor DESC;
+
+![image](https://github.com/xArthurFerreira/BANCO-DE-DADOS-ESCOLA/assets/141787340/49de6def-7301-4ddd-bde6-9a7f2014b98d)
 
 
 
